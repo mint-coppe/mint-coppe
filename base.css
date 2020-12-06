@@ -1,15 +1,16 @@
 @charset "utf-8";
+
+
 .title{
 	font-size:50px;
-	background-image: url("background01.jpg");
-	
+	background-image:url("background01.jpg");
 }
 
 .text{
 	background-image:url("background02.jpg");
 }
 
-footer{
-	bottom:0;
-	color:red;
+.form{
+	word-spacing: 5px;
+
 }
