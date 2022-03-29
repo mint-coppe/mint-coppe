@@ -58,17 +58,20 @@ center{
 }
 
 .box{
+	font-size: 45px;
 	border: solid 3px black;
 	display: inline-block;
 
 }
 
 .fraction{
+	font-size: 35px;
   display: inline-block;
   vertical-align: middle;
   text-align: center;
 }
 .fraction_n,.fraction_d{
+		font-size: 35px;
   display: block;
 }
 .fraction_n{
