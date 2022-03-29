@@ -5,13 +5,41 @@
 
 }
 
+body{
+	display:flex;
+	min-height:100vh;
+	flex-direction:column;
+}
+
+p{
+
+	font-size:30px;
+	margin: 50px;
+}
+
+h2{
+	margin: 40px
+}
+
+h3{
+
+	margin: 50px
+
+}
+
+center{
+
+	font-size:30px;
+
+}
+
 .title{
 	font-size:50px;
 	background-image:url("background01.jpg");
 }
 
 .subtitle{
-	font-size:40px;
+	font-size:50px;
 	text-align:center
 }
 
@@ -20,6 +48,52 @@
 	font-size:30px;
 }
 
+.question{
+
+	background-color:#ffffff;
+	font-size:30px;
+	margin: 60px;
+	border: solid 2px black;
+
+}
+
+.box{
+	border: solid 3px black;
+	display: inline-block;
+
+}
+
+.fraction{
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+}
+.fraction_n,.fraction_d{
+  display: block;
+}
+.fraction_n{
+  border-bottom: 3px solid #333;
+}
+
 .text{
-	margin:50px;
+	display: flex;
+	flex :1;
+	margin: 50px;
+
+}
+
+.text>div{
+	flex:1;
+}
+
+.canter{
+	flex:1;
+}
+
+.right, .left{
+	flex:0 0 12em;
+}
+
+.left{
+	order:-1;
 }

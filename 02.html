@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="base.css">
+	<title>ポケモンに学ぶ数学①</title>
+</head>
+
+<body>
+
+
+	<div class="form">
+
+		<center class="title"> 某高専生mintの部屋</center>
+
+		<div class="buttons">
+			<a href="index.html" class="home">ホーム</a>
+			<a href ="introduction.html" class="introduction">自己紹介</a>
+			<center>気になった問題の解説などを書いていきたい</center>
+		<hr>
+
+		</div>
+	</div>
+
+	<div class="main" style="min-height:100vh;">
+
+		<p class="subtitle">ポケモンに学ぶ数学① ～場合の数と確率～</p>
+		<p class="text">&ensp;&ensp;こんにちは。皆さんは数学は好きでしょうか。数学、なかでも確率は苦手な人が多いのではないでしょうか。<br>&ensp;&ensp;今回はそんな人のために、皆さんの大好きなポケモンを題材に問題を作ったので解説します。全6問用意したので解いてみてください。
+		</p><br>
+
+		<h2>第1問</h2>
+		<p class = "question"><br>&ensp;&ensp;手持ち6匹の中から、戦闘に使う3匹のポケモンの決め方は何通りあるか。ただし、先頭と手持ちのポケモンは区別するものとする。(先頭A 手持ちB,C と 先頭B 手持ちA,C は違うものとする)<br><br></p>
+		<h3><div class ="box">解説</div></h3>
+		<p>&ensp;&ensp;第1問に相応しい問題ですね。弊校では2年の前期でやった気がします。6個の物の中から3個を選ぶ選び方だからと言って安直に</p>
+		<center><font size = "10"><font size = "6">6</font><font size = "10">C</font><font size = "6">3</font> = 20</font></center><br>
+		<p class = "text">としてはあきまへん。まず先頭に出すポケモンを6匹の中から1匹選び、そのあとで残りのポケモンを5匹の中から2匹選びましょう。したがって</p>
+		<center><font size = "10">6&sdot;<font size = "6">5</font><font size = "10">C</font><font size = "6">2</font> = 6&sdot;10 = 60</font></center>
+		<p>よって答えは<span style="border-bottom: solid 3px black;">60通り</span>になります。</p>
+		<p><別解><br>&ensp;&ensp;6個のポケモンの中から3個を選び、その中から先頭に出すポケモン1匹を選べばいいので、20*3=60(通り)としても良いですね。安直とか言ってごめんなさい。</p>
+		<p>&ensp;&ensp;ポケモンは選出が難しいと思っていたけれど、60パターンの中から最適な組み合わせを選ぶ必要があったんですねェェ。</p><br>
+
+		<h2>第2問</h2>
+		<p class = "question"><br>
+			&ensp;&ensp;サファリパークの一部を図1に示す。以下の問に答えよ<br>
+			(1)AからBへの最短経路の個数を求めよ<br>
+			(2)Aからどうぐを拾ってBまで行く最短経路の個数を求めよ。ただし、どうぐが落ちているマスに入ることでどうぐを拾えることとする。<br><br>
+		</p>
+
+		<p style="text-align:center">	<img src="kusamura.png">&ensp;&ensp;<br></p>
+		<center>図1.サファリパークの一部(縦:4 横:7)</center>
+		<h3><div class ="box"> 解説 </div></h3>
+		<p>&ensp;&ensp;(1)図2の例を見れば分かるように、1つの「最短経路」に対し、「→6個と↑3個の並べ方」が一対一対応する。すなわち、図2の行き方は「→↑→→↑→→↑→」のただ一つで表され、逆に「→↑→→↑→→↑→」の並べ方は、図2の行き方のみに定まる。
+
+			<p style="text-align:center"><img src="kusamura(2).png">&ensp;&ensp;<br></p>
+			<center>図2.行き方の例</center>
+
+			<p>よって、「最短経路」の代わりに「矢印の並べ方」を考えればよい</p>
+			<p>「→6個と↑3個の並べ方」は、9回の移動の中から、3回の北(上)に移動する箇所を選べばよいので、</p>
+			<center>
+				<font size = "6">9<font size = "10">C</font>3</font>
+				<font size =" 10"> =</font>
+				<span class="fraction" >
+    			<span class="fraction_n" >9!</span>
+	    		<span class="fraction_d">3!&sdot;6!</span>
+	  		</span>
+				<font size="10"> = 84</font>
+			</center>
+			<p>したがって答えは<span style="border-bottom: solid 3px black;">84個</span>となる。</p>
+			<p>&ensp;&ensp;(2)(1)と同様に考えて、</p>
+			<p>「Aからどうぐへの最短距離」と「→2個、↑2個の並べ方」、「どうぐからBへの最短距離」と「→4個、↑1個の並べ方」</p>
+			<p>はそれぞれ一対一対応であるから、求める場合の数は、</p>
+
+			<center>
+				<font size="6">4</font>
+				<font size="10">C</font>
+				<font size="6">2</font>
+				<font size="10">&sdot;</font>
+				<font size="6">5</font>
+				<font size="10">C</font>
+				<font size="6">1</font>
+				<font size="10"> = </font>
+				<span class="fraction" >
+					<span class="fraction_n" >4!</span>
+					<span class="fraction_d">2!&sdot;2!</span>
+				</span>
+				&sdot;
+				<span class="fraction" >
+					<span class="fraction_n" >5!</span>
+					<span class="fraction_d">1!&sdot;4!</span>
+				</span>
+				<font size="10"> = 6&sdot;5 = 30</font>
+			</center>
+			<p>より<span style="border-bottom: solid 3px black;">30個</span>。</p>
+			<p>&ensp;&ensp;余計にくさむらに入ってしまうとやせいのポケモンがあらわれてめんどくさいですね。</p>
+
+			<br><br>
+
+			<h2>第3問</h2>
+			<p class = "question"><br>&ensp;&ensp;麻痺状態のポケモンについて以下の問に答えよ。ただし麻痺状態になると1/4の確率で行動できなくなるとし、以下その現象を麻痺バグと呼ぶ。<br>(1)3ターン連続で麻痺バグが起こる確率を求めよ。<br>(2)4ターン目にちょうど2回目の麻痺バグが起こる確率を求めよ。<br><br></p>
+			<h3><div class ="box"> 解説 </div></h3>
+			<p>&ensp;&ensp;(1)各ターンでの麻痺バグの起こりやすさは無関係であるから</p>
+			<center><p>
+				(
+				<span class="fraction" >
+					<span class="fraction_n" >1</span>
+					<span class="fraction_d">4</span>
+				</span>
+				)<sup>3</sup> =
+				<span class="fraction" >
+					<span class="fraction_n" >1</span>
+					<span class="fraction_d">64</span>
+			</p></center>
+
+			<p>よって求める確率は
+				<span class="fraction" >
+					<span class="fraction_n" >1</span>
+					<span class="fraction_d">64</span>
+				</span>である。
+			</p>
+			<p>(2)3ターン目までに1回だけ麻痺バグが起こり(他2回はバグらない、すなわち1/4を1回、3/4を2回引く)、4ターン目に麻痺バグが起こる確率を考える。はじめの3ターンの中からバグる1回を選ぶ選び方は3通り。その各々の確率は、</p>
+			<center><p>
+				<span class="fraction" >
+					<span class="fraction_n" >1</span>
+					<span class="fraction_d">4</span>
+			</span> &sdot; (<span class="fraction" >
+				<span class="fraction_n" >3</span>
+				<span class="fraction_d">4</span>
+		</span>)<sup>2</sup> = <span class="fraction" >
+			<span class="fraction_n" >9</span>
+			<span class="fraction_d">64</span>
+		</p></center>
+		<p>であるから、求める確率は</p>
+		<center>
+			<p>3 &sdot; <span class="fraction" >
+				<span class="fraction_n" >9</span>
+				<span class="fraction_d">64</span>
+			</span> &sdot; <span class="fraction" >
+				<span class="fraction_n" >1</span>
+				<span class="fraction_d">4</span>
+			</span> = <span class="fraction" >
+				<span class="fraction_n" >27</span>
+				<span class="fraction_d">256</span>
+			</p>
+		</center>
+		<p>である。</p>
+		<p>今日は寝ますおやすみ。</p>
+			<br><br><br>
+	</div>
+
+
+
+	<a href="index.html" HOME class="home">
+		<center>ホーム</center></a>
+
+
+
+</body>
+</html>
