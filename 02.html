@@ -26,7 +26,7 @@
 	<div class="main" style="min-height:100vh;">
 
 		<p class="subtitle">ポケモンに学ぶ数学① ～場合の数と確率～</p>
-		<p class="text">&ensp;&ensp;こんにちは。皆さんは数学は好きでしょうか。数学、なかでも確率は苦手な人が多いのではないでしょうか。<br>&ensp;&ensp;今回はそんな人のために、皆さんの大好きなポケモンを題材に問題を作ったので解説します。全6問用意したので解いてみてください。
+		<p class="text">&ensp;&ensp;こんにちは。皆さんは数学は好きでしょうか。数学、なかでも確率は苦手な人が多いのではないでしょうか。<br>&ensp;&ensp;今回はそんな人のために、皆さんの大好きなポケモンを題材に問題を作ったので解説します。全5問用意したので解いてみてください。
 		</p><br>
 
 		<h2>第1問</h2>
@@ -34,7 +34,7 @@
 		<h3><div class ="box">解説</div></h3>
 		<p>&ensp;&ensp;第1問に相応しい問題ですね。弊校では2年の前期でやった気がします。6個の物の中から3個を選ぶ選び方だからと言って安直に</p>
 		<center><font size = "10"><font size = "6">6</font><font size = "10">C</font><font size = "6">3</font> = 20</font></center><br>
-		<p class = "text">としてはあきまへん。まず先頭に出すポケモンを6匹の中から1匹選び、そのあとで残りのポケモンを5匹の中から2匹選びましょう。したがって</p>
+		<p>としてはあきまへん。まず先頭に出すポケモンを6匹の中から1匹選び、そのあとで残りのポケモンを5匹の中から2匹選びましょう。したがって</p>
 		<center><font size = "10">6&sdot;<font size = "6">5</font><font size = "10">C</font><font size = "6">2</font> = 6&sdot;10 = 60</font></center>
 		<p>よって答えは<span style="border-bottom: solid 3px black;">60通り</span>になります。</p>
 		<p><別解><br>&ensp;&ensp;6個のポケモンの中から3個を選び、その中から先頭に出すポケモン1匹を選べばいいので、20*3=60(通り)としても良いですね。安直とか言ってごめんなさい。</p>
@@ -100,16 +100,17 @@
 			<p class = "question"><br>&ensp;&ensp;麻痺状態のポケモンについて以下の問に答えよ。ただし麻痺状態になると1/4の確率で行動できなくなるとし、以下その現象を麻痺バグと呼ぶ。<br>(1)3ターン連続で麻痺バグが起こる確率を求めよ。<br>(2)4ターン目にちょうど2回目の麻痺バグが起こる確率を求めよ。<br><br></p>
 			<h3><div class ="box"> 解説 </div></h3>
 			<p>&ensp;&ensp;(1)各ターンでの麻痺バグの起こりやすさは無関係であるから</p>
-			<center><p>
-				(
-				<span class="fraction" >
-					<span class="fraction_n" >1</span>
-					<span class="fraction_d">4</span>
-				</span>
-				)<sup>3</sup> =
+			<center><p>(
+					<span class="fraction" >
+						<span class="fraction_n" > 1 </span>
+						<span class="fraction_d"> 4 </span>
+					</span>)
+
+				<sup>3</sup> =
 				<span class="fraction" >
 					<span class="fraction_n" >1</span>
 					<span class="fraction_d">64</span>
+				</span>
 			</p></center>
 
 			<p>よって求める確率は
@@ -144,8 +145,106 @@
 			</p>
 		</center>
 		<p>である。</p>
-		<p>今日は寝ますおやすみ。</p>
-			<br><br><br>
+
+		<h2>第4問</h2>
+		<p class = "question"><br>&ensp;&ensp;おうじゃのしるし持ちスキルリンクパルシェンのつららばり(5回攻撃)であいてがひるむ確率を求めよ。(ただし、おうじゃのしるしを持たせると、攻撃技を使用した時に10%で相手がひるむ効果が追加される)<br><br></p>
+		<h3><div class ="box"> 解説 </div></h3>
+		<p>&ensp;&ensp;ポケモンのレート対戦を知らない人には説明が足りませんね。要は1/10の確率であたるくじを5回引いて、少なくとも1本は当たる確率を求めよ、という問題と同じことを言っています。</p>
+		<p>&ensp;&ensp;「少なくとも」という表現はよく確率の問題で出てきますが、すごくで求めにくいですね。この例で行くと、1回だけ当たる確率、2回だけ当たる確率…と計算量が多くなります。</p>
+		<p>&ensp;&ensp;そのようなときは余事象を使いましょう。つまり題意の事象をAとし、その余事象&Amacr;:「あいてがひる"まない"」確率P(&Amacr;)を求めます。</p>
+		<p>&ensp;&ensp;1回ひるまない確率は9/10であり、これが5回連続起こる確率P(&Amacr;)は、</p>
+
+		<center> P(&Amacr;) = (
+			<span class="fraction" >
+				<span class="fraction_n" > 9 </span>
+				<span class="fraction_d"> 10 </span>
+			</span>	)	<sup>5</sup> =
+				<span class="fraction" >
+					<span class="fraction_n" > 59049 </span>
+					<span class="fraction_d"> 100000 </span>
+				</span>
+			</center>
+
+			<p>となる。したがって求める確率P(A)は、</p>
+			<center><p>P(A) = 1 - P(&Amacr;) = 1 - 	<span class="fraction" >
+					<span class="fraction_n" > 59049 </span>
+					<span class="fraction_d"> 100000 </span>
+				</span><br> =
+				<span class="fraction" >
+						<span class="fraction_n" > 40951 </span>
+						<span class="fraction_d"> 100000 </span>
+					</span>  ( = 40.951%)
+			</p></center>
+			<p>となる。</p>
+			<p>&ensp;&ensp;4割ひるみのパルシェンは犯罪、はっきり分かりますね。</p>
+
+			<h2>第5問</h2>
+			<p class = "question"><br>&ensp;&ensp;ポケモンを1匹選び、そのポケモンにぜったいれいどを使わせたところ、2ターン連続で当たってしまった。このポケモンがこおりタイプでない確率を求めよ。(ただし、こおりタイプによるぜったいれいどは命中率30%、こおりでないタイプによるものは20%であるとする。)<br><br></p>
+			<h3 class ="box"> 解説 </h3>
+			<p>&ensp;&ensp;あまり知られてないけど、こおりタイプ以外がぜったいれいどを使うと基礎命中率は20%になるんです。</p>
+			<p>&ensp;&ensp;この問題はいわゆる条件付き確率というもので、これは何かを前提にした起こりやすさの割合を意味します。この問題では、「2ターン連続で当たったこと」が前提となります。これは「あたった」という未来を前提に、「選んだ」という過去における確率を求めるので、時間を逆流していて考えづらいですね。</p>
+			<p>&ensp;&ensp;この手の問題では、時間の流れは考えずに機械的に解いていきましょう。</p>
+			<p>&ensp;&ensp;A:「選んだポケモンがこおりタイプでない」、B:「ぜったいれいどが2回連続で当たる」<br>とすると、求める確率は条件付確率</p>
+			<div class = "formula">P<font size = "6">B</font>(A) = <span class="fraction" >
+					<span class="fraction_n" > P(A∧B) </span>
+					<span class="fraction_d"> P(B) </span>
+				</span>
+					= <span class="fraction" >
+							<span class="fraction_n" > P(A∧B) </span>
+							<span class="fraction_d"> P(A∧B) + P(&Amacr;∧B) </span>
+						</span>
+						</div>
+
+			<p>となる。これは定義なので覚えましょう。Pの右下にある小さいBが前提条件となっています。</p>
+			<p>&ensp;&ensp;ここで A∧B :「こおりタイプでないポケモンがぜったいれいどを2回連続で当てる」であるから、</p>
+			<div class ="formula">P(A∧B) = ( <span class="fraction" >
+					<span class="fraction_n" > 20 </span>
+					<span class="fraction_d"> 100 </span>
+				</span> ) <sup>2</sup> =
+				<span class="fraction" >
+ 					<span class="fraction_n" > 4 </span>
+ 					<span class="fraction_d"> 100 </span>
+ 				</span></div>
+
+			<p>&ensp;&ensp;また、&Amacr;∧B :「こおりタイプのポケモンがぜったいれいどを2回連続で当てる」であるから、</p>
+			<div class ="formula">P(&Amacr;∧B) = ( <span class="fraction" >
+					<span class="fraction_n" > 30 </span>
+					<span class="fraction_d"> 100 </span>
+				</span> ) <sup>2</sup> =
+				<span class="fraction" >
+ 					<span class="fraction_n" > 9 </span>
+ 					<span class="fraction_d"> 100 </span>
+ 				</span>
+			</div>
+
+			<p>したがって求める確率は、</p>
+			<div class = "formula">P<font size = "6">B</font>(A)
+					= <span class="fraction" >
+							<span class="fraction_n" > P(A∧B) </span>
+							<span class="fraction_d"> P(A∧B) + P(&Amacr;∧B) </span>
+						</span><br>
+						= <span class="fraction" >
+								<span class="fraction_n" > <span class="fraction" >
+				 					<span class="fraction_n" > 4 </span>
+				 					<span class="fraction_d"> 100 </span>
+				 				</span> </span>
+								<span class="fraction_d"><span class="fraction" >
+				 					<span class="fraction_n" > 4 </span>
+				 					<span class="fraction_d"> 100 </span>
+				 				</span> +				<span class="fraction" >
+								 					<span class="fraction_n" > 9 </span>
+								 					<span class="fraction_d"> 100 </span>
+								 				</span> </span>
+							</span><br><br>
+							= 				<span class="fraction" >
+							 					<span class="fraction_n" > 4 </span>
+							 					<span class="fraction_d"> 13 </span>
+							 				</span>
+
+			</div>
+			<p>となる。</p>
+
+		<br><br><br>
 	</div>
 
 
